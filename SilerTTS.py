@@ -21,6 +21,6 @@ class STTSMod(loader.Module):
     @message.client.on(events.NewMessage(chats='silero_voice_bot'))
     async def handler_new_message(event):
       await message.client.send_message(f'{chat_uname}', event.message)
-      break
+    
     
 
