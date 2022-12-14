@@ -12,6 +12,7 @@ class STTSMod(loader.Module):
   async def client_ready(self, client, db):
     self.client = client
   async def sttscmd(self, message):
+    """Используй .stts <текст(максимальная длина 500 символов)>"""
     @message.client.on(events.NewMessage(chats='silero_voice_bot'))
     async def handler_new_message(event):
       await message.client.send_message('me', event.message)
