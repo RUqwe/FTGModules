@@ -15,7 +15,7 @@ class STTSMod(loader.Module):
     """Используй .stts <текст(максимальная длина 500 символов)>"""
     text = utils.get_args_raw(message)
     chat_id = message.chat_id
-    chat_uname = message.client.get_entity(chat_id)
+    chat_uname = message.client.get_entity(chat_id).to_dict()['username']
     
     await message.client.send_message('silero_voice_bot', f'{text}')
     @message.client.on(events.NewMessage(chats='silero_voice_bot'))
